@@ -30,7 +30,57 @@ const restaurant = {
   order: function (starterIndex, mainIndex) {
     return [this.starterMenu[starterIndex], this.mainMenu[mainIndex]];
   },
+
+  orderDelivery: function ({
+    starterIndex = 1,
+    mainIndex = 0,
+    time = '20:00',
+    address,
+  }) {
+    console.log(
+      `Order received! ${this.starterMenu[starterIndex]} and ${this.mainMenu[mainIndex]} will be delivered to ${address} at ${time}`
+    );
+  },
 };
+
+restaurant.orderDelivery({
+  time: '22:30',
+  address: 'Via del Sole, 21',
+  mainIndex: 2,
+  starterIndex: 2,
+});
+
+restaurant.orderDelivery({
+  address: 'Via del Sole, 21',
+  starterIndex: 1,
+});
+
+const { name, openingHours, categories } = restaurant;
+console.log(name, openingHours, categories);
+
+const {
+  name: restaurantName,
+  openingHours: hours,
+  categories: tags,
+} = restaurant;
+console.log(restaurantName, hours, tags);
+
+// Default values
+const { menu = [], starterMenu: starters = [] } = restaurant;
+console.log(menu, starters);
+
+// Mutating variables
+let a = 111;
+let b = 999;
+const obj = { a: 23, b: 7, c: 14 };
+({ a, b } = obj);
+console.log(a, b);
+
+// Nested objects
+const {
+  fri: { open: o, close: c },
+} = openingHours;
+console.log(o, c);
 
 // const arr = [2, 3, 4];
 // const a = arr[0];
@@ -95,43 +145,43 @@ const restaurant = {
 //---------- EXAMPLE 3 ---------
 //ASSIGN ARRAY ELEMENTS TO VARIABLES
 
-const colors = ['red', 'green', 'blue', 'black', 'white'];
-const [firstColor, secondColor, thirdColor, ...extraColors] = colors;
-console.log(firstColor);
-console.log(secondColor);
-console.log(thirdColor);
-console.log(extraColors);
+// const colors = ['red', 'green', 'blue', 'black', 'white'];
+// const [firstColor, secondColor, thirdColor, ...extraColors] = colors;
+// console.log(firstColor);
+// console.log(secondColor);
+// console.log(thirdColor);
+// console.log(extraColors);
 
-//---------- EXAMPLE 4 ---------
-// EXTRACT VALUES FROM OBJECTS
-const person1 = {
-  firstName: 'Spongebob',
-  lastName: 'SquarePants',
-  age: 30,
-  job: 'Fry Cook',
-};
+// //---------- EXAMPLE 4 ---------
+// // EXTRACT VALUES FROM OBJECTS
+// const person1 = {
+//   firstName: 'Spongebob',
+//   lastName: 'SquarePants',
+//   age: 30,
+//   job: 'Fry Cook',
+// };
 
-const person2 = {
-  firstName: 'Patrick',
-  lastName: 'Star',
-  age: 34,
-};
+// const person2 = {
+//   firstName: 'Patrick',
+//   lastName: 'Star',
+//   age: 34,
+// };
 
-// const { firstName, lastName, age, job } = person1;
-const { firstName, lastName, age, job = 'Unemployed' } = person2;
-console.log(firstName);
-console.log(lastName);
-console.log(age);
-console.log(job);
+// // const { firstName, lastName, age, job } = person1;
+// const { firstName, lastName, age, job = 'Unemployed' } = person2;
+// console.log(firstName);
+// console.log(lastName);
+// console.log(age);
+// console.log(job);
 
-//---------- EXAMPLE 5 ---------
-// DESTRUCTURE IN FUNCTION PARAMETERS
+// //---------- EXAMPLE 5 ---------
+// // DESTRUCTURE IN FUNCTION PARAMETERS
 
-function displayPerson({ firstName, lastName, age, job = 'Unemployed' }) {
-  console.log(`name: ${firstName},${lastName} `);
-  console.log(`age: ${age}`);
-  console.log(`job: ${job}`);
-}
+// function displayPerson({ firstName, lastName, age, job = 'Unemployed' }) {
+//   console.log(`name: ${firstName},${lastName} `);
+//   console.log(`age: ${age}`);
+//   console.log(`job: ${job}`);
+// }
 
-displayPerson(person1);
-displayPerson(person2);
+// displayPerson(person1);
+// displayPerson(person2);
