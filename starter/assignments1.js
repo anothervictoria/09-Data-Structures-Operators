@@ -1,26 +1,3 @@
-'use strict';
-// const country = 'Georgia';
-// const continent = 'Eurasia';
-// const population = '3 million';
-// console.log(country, continent, population);
-
-// const isIsland = false;
-// let language;
-// console.log(
-//   typeof isIsland,
-//   typeof population,
-//   typeof country,
-//   typeof language
-// );
-
-// language = 'Georgian';
-
-// console.log('9' - '5'); //4
-// console.log('19' - '13' + '17'); //617
-// console.log('19' - '13' + 17); // 23
-// console.log('123' < 57); // false
-// console.log(5 + 6 + '4' + 9 - 4 - 2); // 1143
-
 // 1. Write a function that takes the base and height of a triangle and return its area.
 
 // const returnArea = function (base, height) {
@@ -131,15 +108,16 @@
 
 // console.log(sumOfNumbers([1, 'სალამი', 2, 44, 'გამარჯობა']));
 
-// 7. შექმენით ფუნქცია რომელიც რომელიც მიიღებს ორ პარამეტრს არაის და n ს და დააბრუნებს ახალ არაის რომელიც შედგებნა n is jeradi ricxvebisgan magalitad
+//7. შექმენით ფუნქცია რომელიც რომელიც მიიღებს ორ პარამეტრს არაის და n ს და დააბრუნებს ახალ არაის რომელიც შედგებნა n is jeradi ricxvebisgan magalitad
 
 // const arr = [1, 2, 5, 8, 15, 20];
 // const arr1 = [9, 12, 45, 23, 17, 11, 4, 6, 20];
 // const arr2 = [7, 8, 21, 22, 14];
 
 // //function fun(arr, 5) // expected outcome [5, 16, 20]
-// const newArray = [];
+
 // const returnNewArray = function (array, n) {
+//   const newArray = [];
 //   for (let i = 0; i < array.length; i++) {
 //     if (array[i] % n === 0) {
 //       newArray.push(array[i]);
@@ -178,8 +156,6 @@ spelling("eagerly") ➞ ["e", "ea", "eag", "eage", "eager", "eagerl", "eagerly"]
 // console.log(spellingFunction('eagerly'));
 
 // 9. შექმენით ფუნქცია რომელსაც გადაეცემა მსგავსი ობიექტი და აბრუნებს მენტორთა სახელისა და გვარებისაგან შემდგარ არაის // expected output [‘გიორგი ბერიძე’, ‘ნინო გვაზავა’, ‘მარია კვირიკაშვილი’,  ‘იაკობი გელიძე’]
-
-const mentorsNames = function (object) {};
 
 const mentors = [
   {
@@ -330,4 +306,40 @@ const mentors = [
   },
 ];
 
+// const mentorsNames = [];
+// let menName;
+// let surname;
+// const getMentorsNames = function (array) {
+//   for (let i = 0; i < array.length; i++) {
+//     menName = mentors[i].firstName;
+//     surname = mentors[i].lastName;
+//     let newName = `${menName} ${surname}`;
+//     mentorsNames.push(newName);
+//   }
+//   return mentorsNames;
+// };
+// console.log(getMentorsNames(mentors));
+
 // 10. შექმენით ფუნქცია რომელიც მიიღებს მსგვს ობიექტს  და აბრუნებს არაის სადაც თითო მენტორის ყველა სტუდენტის ქულათა ჯამები იქნება ანუ ამ შემთხვევაში 4 ელემენტიანი არაი უნდა დააბრუნოს
+
+// const studentsPointsSum = [];
+
+// const getStudentsPoints = function (array) {
+//   for (let i = 0; i < array.length; i++) {
+//     let sum = 0;
+//     const students = array[i].students;
+//     // console.log(students);
+//     for (let b = 0; b < students.length; b++) {
+//       const student = students[b];
+//       for (let k = 0; k < student.allScores.length; k++) {
+//         sum += student.allScores[k];
+//       }
+//     }
+//     studentsPointsSum.push({
+//       mentorName: array[i].firstName + ' ' + array[i].lastName,
+//       totalScore: sum,
+//     });
+//   }
+//   return studentsPointsSum;
+// };
+// console.log(getStudentsPoints(mentors));
