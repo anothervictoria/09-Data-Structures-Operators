@@ -61,11 +61,11 @@
 // // მარცხენა დიაგონალი 5, 50, -10
 // // მარჯვენა დიაგონალი 20, 50, 0
 // // დათვალეთ დიაგონალების ჯამი და ჩაწერეთ ცვლადში
-// let sumOfDiagonals;
-// let sumLeft = 0;
-// let sumRight = 0;
 
 // const getDiagonalsArray = function (array) {
+//   let sumOfDiagonals;
+//   let sumLeft = 0;
+//   let sumRight = 0;
 //   const leftDiagonalArray = [];
 //   const rightDiagonalArray = [];
 //   // return left diagonal
@@ -94,10 +94,10 @@
 
 // getDiagonalsArray(array);
 
-// 6. შექმენით ფუნქცია რომელსაც გადაეცემა არაი და აბრუნებს არაიში არსებული რიცხვების ჯამს გაითვალისწინეთ რომ არაიში შეიძლება იყოს სტრინგ ტაიპები მაგალითად [1, ‘სალამი’, 2, 44, ‘გამარჯობა’]
+//6. შექმენით ფუნქცია რომელსაც გადაეცემა არაი და აბრუნებს არაიში არსებული რიცხვების ჯამს გაითვალისწინეთ რომ არაიში შეიძლება იყოს სტრინგ ტაიპები მაგალითად [1, ‘სალამი’, 2, 44, ‘გამარჯობა’]
 
-// let sum = 0;
 // const sumOfNumbers = function (array) {
+//   let sum = 0;
 //   for (let i = 0; i < array.length; i++) {
 //     if (typeof array[i] === 'number') {
 //       sum += array[i];
@@ -139,14 +139,14 @@ spelling("happy") ➞ ["h", "ha", "hap", "happ", "happy"]
 
 spelling("eagerly") ➞ ["e", "ea", "eag", "eage", "eager", "eagerl", "eagerly"] */
 
-// const wordProcess = [];
 // const spellingFunction = function (string) {
+//   const wordProcess = [];
 //   const letters = string.split('');
 //   let step = '';
-//   console.log(letters);
+
 //   for (let i = 0; i < letters.length; i++) {
 //     step += letters[i];
-//     console.log(step);
+//     // console.log(step);
 //     wordProcess.push(step);
 //   }
 //   return wordProcess;
@@ -306,10 +306,10 @@ const mentors = [
   },
 ];
 
-// const mentorsNames = [];
-// let menName;
-// let surname;
 // const getMentorsNames = function (array) {
+//   const mentorsNames = [];
+//   let menName;
+//   let surname;
 //   for (let i = 0; i < array.length; i++) {
 //     menName = mentors[i].firstName;
 //     surname = mentors[i].lastName;
