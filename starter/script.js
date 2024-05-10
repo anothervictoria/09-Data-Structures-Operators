@@ -36,6 +36,11 @@ const restaurant = {
       `Here is your delicious pasta with ${ing1}, ${ing2} and ${ing3}`
     );
   },
+
+  orderPizza: function (mainIngredient, ...otherIngredients) {
+    console.log(mainIngredient);
+    console.log(otherIngredients);
+  },
 };
 
 const { restName, openingHours, categories } = restaurant;
@@ -227,31 +232,31 @@ console.log(restaurantName, hours, tags);
 // // displayPerson(person1);
 // // displayPerson(person2);
 
-//SPREAD OPERATOR
-const arr = [7, 8, 9];
-const badNewArr = [1, 2, arr[0], arr[1], arr[2]];
-console.log(badNewArr);
-const newArr = [1, 2, ...arr];
-console.log(newArr);
+// //SPREAD OPERATOR
+// const arr = [7, 8, 9];
+// const badNewArr = [1, 2, arr[0], arr[1], arr[2]];
+// console.log(badNewArr);
+// const newArr = [1, 2, ...arr];
+// console.log(newArr);
 
-const newMenu = [...restaurant.mainMenu, 'Gnocci'];
-console.log(newMenu);
+// const newMenu = [...restaurant.mainMenu, 'Gnocci'];
+// console.log(newMenu);
 
-// Copy array
-const mainMenuCopy = [...restaurant.mainMenu];
-console.log(mainMenuCopy);
+// // Copy array
+// const mainMenuCopy = [...restaurant.mainMenu];
+// console.log(mainMenuCopy);
 
-// Join 2 arrays
-const joinedMenu = [...restaurant.mainMenu, ...arr];
-console.log(joinedMenu);
+// // Join 2 arrays
+// const joinedMenu = [...restaurant.mainMenu, ...arr];
+// console.log(joinedMenu);
 
-//Iterables: arrays, strings, maps, sets. NOT objects
+// //Iterables: arrays, strings, maps, sets. NOT objects
 
-const str = 'Jonas';
-const letters = [...str, ' ', 'S.'];
-console.log(letters);
+// const str = 'Jonas';
+// const letters = [...str, ' ', 'S.'];
+// console.log(letters);
 
-console.log(...str);
+// console.log(...str);
 // console.log(`${...str}`);
 
 // real-world spread example
@@ -275,3 +280,45 @@ const restaurantCopy = { ...restaurant };
 restaurantCopy.restName = 'Ristorante Roma';
 console.log(restaurant.restName);
 console.log(restaurantCopy.restName);
+
+////////
+////////
+////////
+//////// 107. Rest Pattern and Parameters
+
+// 1) Destructuring
+
+// SPREAD, because on RIGHT side of =
+const arr = [1, 2, ...[3, 4]];
+
+// RESR, because on LEFT side of =
+const [a, b, ...others] = [1, 2, 3, 4, 5];
+console.log(a, b, others);
+
+const [pizza, , risotto, ...otherFood] = [
+  ...restaurant.mainMenu,
+  ...restaurant.starterMenu,
+];
+console.log(pizza, risotto, otherFood);
+
+// Objects
+const { sat, ...weekdays } = restaurant.openingHours;
+console.log(weekdays);
+
+// 2) FUNCTIONS
+const add = function (...numbers) {
+  let sum = 0;
+  for (let i = 0; i < numbers.length; i++) {
+    sum += numbers[i];
+  }
+  console.log(sum);
+};
+add(2, 3);
+add(5, 3, 7, 2);
+add(8, 3, 4, 5, 7, 3, 2, 4);
+
+const x = [23, 5, 7];
+add(...x); //(using spread)
+
+restaurant.orderPizza('mushrooms', 'onion', 'olives', 'spinach');
+restaurant.orderPizza('mushrooms');
