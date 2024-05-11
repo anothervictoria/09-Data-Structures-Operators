@@ -330,43 +330,81 @@ restaurant.orderPizza('mushrooms');
 
 //  Short Circuiting (&& and ||)
 
-console.log('--------- OR -----------');
-// ||  Use ANY data type, return ANY data type, short-circuiting
-//returns the first truthy value
-console.log(3 || 'Jonas'); // returns 3
-console.log('' || 'JOnas'); // returns jonas
-console.log(true || 0); //returns true
-console.log(undefined || null);
+// console.log('--------- OR -----------');
+// // ||  Use ANY data type, return ANY data type, short-circuiting
+// //returns the first truthy value
+// console.log(3 || 'Jonas'); // returns 3
+// console.log('' || 'JOnas'); // returns jonas
+// console.log(true || 0); //returns true
+// console.log(undefined || null);
 
-console.log(undefined || 0 || '' || 'hello' || 23 || null); //hello, because hello is the first truthy value
+// console.log(undefined || 0 || '' || 'hello' || 23 || null); //hello, because hello is the first truthy value
 
-// restaurant.numGuests = 23;
-const guests1 = restaurant.numGuests ? restaurant.numGuests : 10;
-console.log(guests1);
+// // restaurant.numGuests = 23;
+// const guests1 = restaurant.numGuests ? restaurant.numGuests : 10;
+// console.log(guests1);
 
-const guests2 = restaurant.numGuests || 10;
-console.log(guests2);
+// const guests2 = restaurant.numGuests || 10;
+// console.log(guests2);
 
-/////////
-console.log('--------- AND -----------');
-//if it is truthy, the last evaluation value is returned
+// /////////
+// console.log('--------- AND -----------');
+// //if it is truthy, the last evaluation value is returned
 
-console.log(0 && 'Jonas'); // 0
-console.log(7 && 'Jonas'); //Jonas
-console.log('Hello' && 23 && null && 'Jonas'); //null
+// console.log(0 && 'Jonas'); // 0
+// console.log(7 && 'Jonas'); //Jonas
+// console.log('Hello' && 23 && null && 'Jonas'); //null
 
-//Practical example
-if (restaurant.orderPizza) {
-  restaurant.orderPizza('mushrooms', 'spinach');
-}
+// //Practical example
+// if (restaurant.orderPizza) {
+//   restaurant.orderPizza('mushrooms', 'spinach');
+// }
 
-restaurant.orderPizza && restaurant.orderPizza('mushrooms', 'spinach');
+// restaurant.orderPizza && restaurant.orderPizza('mushrooms', 'spinach');
 
-//  The Nullish Coalescing Operator (??)
-restaurant.numGuests = 0;
-const guests = restaurant.numGuests || 10;
-console.log(guests);
+// //  The Nullish Coalescing Operator (??)
+// restaurant.numGuests = 0;
+// const guests = restaurant.numGuests || 10;
+// console.log(guests);
 
-// Nullish values: null and undefined (NOT 0 or '');
-const guestCorrect = restaurant.numGuests ?? 10;
-console.log(guestCorrect);
+// // Nullish values: null and undefined (NOT 0 or '');
+// const guestCorrect = restaurant.numGuests ?? 10;
+// console.log(guestCorrect);
+
+//////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////
+// Logical Assignment Operators
+
+const rest1 = {
+  restName: 'Carpi',
+  // numGuests: 23,
+  numGuests: 0,
+};
+
+const rest2 = {
+  restName: 'La Piazza',
+  owner: 'Giovanni Rossi',
+};
+
+// OR assignment operator
+// rest2.numGuests = rest2.numGuests || 10; //it works because it returns the first truthy value, so if the first one is false, it continues checking and returns 10;
+
+// rest1.numGuests = rest1.numGuests || 10;
+
+// rest1.numGuests ||= 10;
+// rest2.numGuests ||= 10;
+
+//nullish assignment operator (null or undefined)
+rest1.numGuests ??= 10;
+rest2.numGuests ??= 10;
+
+// AND assignment operator
+//because of short circuiting, returns the first falsy falue. or if both are truthy, it returns the last truthy
+// rest1.owner = rest1.owner && '<ANONYMOUS>';
+// rest2.owner = rest2.owner && '<ANONYMOUS>';
+
+rest1.owner &&= '<ANONYMOUS>';
+rest2.owner &&= '<ANONYMOUS>';
+
+console.log(rest1);
+console.log(rest2);
