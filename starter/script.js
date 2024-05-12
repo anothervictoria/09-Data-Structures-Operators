@@ -532,3 +532,22 @@ printGoals('levan', 'mari', 'nika');
 
 team1 < team2 && console.log(`Team 1 is more likely to win`);
 team2 < team1 && console.log(`Team 1 is more likely to win`);
+
+///////////////////////////////////////
+///////////////////////////////////////
+///////////////////////////////////////
+//////////////////////////////////////
+
+//  Looping Arrays: The for-of Loop
+
+const menu = [...restaurant.starterMenu, ...restaurant.mainMenu];
+
+for (const item of menu) console.log(item);
+for (const [i, el] of menu.entries()) {
+  // console.log(item);
+  console.log(`${i + 1}: ${el}`);
+  // console.log(item[0]);
+  // console.log(item[1]);
+}
+
+// console.log(...menu.entries());
