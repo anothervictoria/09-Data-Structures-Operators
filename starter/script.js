@@ -620,3 +620,33 @@ console.log(restaurant.orderRisotto?.(0, 1) ?? 'Method does not exist');
 //Arrays
 const users = [{ name: 'Jonas', email: 'hello@jonas.com' }];
 console.log(users[0]?.name ?? 'User array empty');
+
+///////////////////////////////////////
+///////////////////////////////////////
+///////////////////////////////////////
+//////////////////////////////////////
+// 115. Looping Objects: Object Keys, Values, and Entries
+
+// Property NAMES
+const properties = Object.keys(openingHours);
+console.log(properties);
+
+let openStr = `We are open on ${properties.length} days`;
+
+for (const day of properties) {
+  openStr += `${day},`;
+}
+
+// Property VALUES
+const values = Object.values(openingHours);
+console.log(values);
+
+// Entire object
+const entries = Object.entries(openingHours);
+// console.log(entries);
+
+//[key, value]
+for (const [key, { open, close }] of entries) {
+  // console.log(x);
+  console.log(`On ${key} we open at ${open} and close at ${close}`);
+}
