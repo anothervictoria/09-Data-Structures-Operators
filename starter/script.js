@@ -834,3 +834,46 @@ console.log(rest);
 console.log(rest.size);
 
 console.log(rest.get([1, 2])); //undefined
+
+///////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////
+//19. Maps: Iteration
+
+const question = new Map([
+  ['Question', 'What is the best programming language?'],
+  [1, 'C'],
+  [2, 'Java'],
+  [3, 'JavaScript'],
+  ['Correct', 3],
+  [true, 'You are correct!'],
+  [false, 'Please try again!'],
+]);
+
+console.log(question);
+
+//Convert object to map
+console.log(Object.entries(openingHours));
+const hoursMap = new Map(Object.entries(openingHours));
+console.log(hoursMap);
+
+// Quiz app
+// console.log(question.get('Question'));
+// for (const [key, value] of question) {
+//   if (typeof key === 'number') console.log(`Answer ${key}: ${value}`);
+// }
+
+// const answer = Number(prompt('Your answer'));
+// // console.log(answer);
+
+// const finalResult = answer === 3 ? question.get(true) : question.get(false);
+// console.log(finalResult);
+// //another way of doing
+// // console.log(question.get(question.get('Correct') === answer));
+
+// Convert map to array
+console.log([...question]);
+console.log([...question.entries()]);
+console.log([...question.keys()]);
+console.log([...question.values()]);
